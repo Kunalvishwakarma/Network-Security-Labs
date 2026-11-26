@@ -1,0 +1,3 @@
+Rule ID,Source Zone,Destination Zone,Protocol,Port or Service,Action,Business Purpose,Rule Owner Role,Change Reference,Logging Enabled,Created Date,Last Reviewed,Expiry or Review Date,Decision,Comments
+RULE-LAB-001,USER,WEB,TCP,HTTPS,Allow,Example web access,Network Owner,CHG-LAB-001,Yes,YYYY-MM-DD,YYYY-MM-DD,YYYY-MM-DD,Retain,Synthetic example only
+RULE-LAB-002,USER,DATA,Any,Deny,Prevent direct data-tier access,Security Owner,CHG-LAB-002,Yes,YYYY-MM-DD,YYYY-MM-DD,YYYY-MM-DD,Retain,Synthetic example only
