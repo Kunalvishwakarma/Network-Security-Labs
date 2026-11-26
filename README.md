@@ -52,12 +52,20 @@ The addresses above are documentation ranges reserved for examples; they are not
 4. Correlate DNS lookups, TCP handshakes and TLS negotiation.
 5. Record findings without publishing payloads, tokens or personal data.
 
+## Published labs and templates
+
+- [Lab 01 — Segmentation design](labs/01-segmentation-design/README.md)
+- [Lab 02 — DNS troubleshooting](labs/02-dns-troubleshooting/README.md)
+- [Lab 03 — Wireshark protocol analysis](labs/03-wireshark-analysis/README.md)
+- [Firewall rule review template](templates/FIREWALL-RULE-REVIEW.csv)
+- [Network security review checklist](docs/NETWORK-SECURITY-REVIEW.md)
+
 ## Roadmap
 
-- [ ] Publish subnetting and addressing exercises
-- [ ] Add a synthetic firewall rule review
-- [ ] Add DNS troubleshooting examples
-- [ ] Add Wireshark protocol walkthroughs with generated captures
-- [ ] Add a network segmentation design exercise
+- [x] Publish a synthetic firewall segmentation exercise
+- [x] Add DNS troubleshooting examples
+- [x] Add Wireshark protocol walkthrough
+- [x] Add a firewall rule review template
+- [x] Add a network security review checklist
 
-Do not scan, intercept or test networks without explicit authorization.
+All labs require authorization and must use synthetic or explicitly approved data. No live scanning or interception is permitted without explicit authorization.
