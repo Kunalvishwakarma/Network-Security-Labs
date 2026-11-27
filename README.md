@@ -1,12 +1,22 @@
 # Network Security Labs
 
-**Enterprise networking | Segmentation | Troubleshooting | Security controls**
+**Enterprise networking | Network security | Segmentation | Troubleshooting**
 
-Vendor-neutral labs for learning, documenting and demonstrating enterprise networking and infrastructure security.
+My infrastructure and network delivery experience has involved complex enterprise environments where connectivity, security boundaries, availability and operational support must work together. This repository captures the network engineering principles I use to reason about those environments, through vendor-neutral learning exercises and synthetic examples.
 
-All topologies, packet captures, IP addresses and hostnames must be synthetic or explicitly cleared for public use.
+The material is intended to demonstrate technical approach and structured troubleshooting. It is not a disclosure of customer network designs, configurations or production incidents.
 
-## Lab topology
+## Engineering focus
+
+- Understand traffic flows, trust boundaries and service dependencies before changing policy.
+- Segment networks according to function, risk and ownership.
+- Apply least privilege and default-deny principles where appropriate.
+- Keep administrative access separate, restricted and auditable.
+- Troubleshoot methodically across DNS, routing, transport and application layers.
+- Maintain clear ownership, purpose, review dates and change records for firewall rules.
+- Monitor permitted and denied traffic to support detection and operational assurance.
+
+## Synthetic lab topology
 
 ```mermaid
 flowchart LR
@@ -18,39 +28,20 @@ flowchart LR
     MGMT --> MON[Monitoring tools]
 ```
 
-The addresses above are documentation ranges reserved for examples; they are not intended for real network deployment.
+The addresses shown are documentation ranges reserved for examples, not real deployment addressing.
 
 ## Learning modules
 
-| Module | Topics | Demonstration |
+| Module | Technical area | What the exercise demonstrates |
 |---|---|---|
-| IP fundamentals | IPv4, CIDR, subnetting | Address plan and subnet calculations |
-| Routing | Static and dynamic routing concepts | Synthetic route table analysis |
-| DNS | Resolution, records, troubleshooting | Query and response walkthrough |
-| Segmentation | Zones, ACLs, firewall policies | Allow-list policy example |
+| IP fundamentals | IPv4, CIDR and subnetting | Address planning and subnet calculations |
+| Routing | Static and dynamic routing concepts | Synthetic route-table analysis |
+| DNS | Resolution, records and troubleshooting | Query/response investigation |
+| Segmentation | Zones, ACLs and firewall policy | Controlled allow-list policy |
 | Secure access | VPN and administrative access | Threat and control review |
-| Load balancing | Health checks and traffic distribution | High-level traffic flow |
-| Packet analysis | TCP, TLS and DNS observations | Sanitized capture analysis |
+| Load balancing | Health checks and traffic distribution | High-level traffic-flow reasoning |
+| Packet analysis | TCP, TLS and DNS | Sanitised protocol analysis |
 | Monitoring | Flow logs and security events | Detection use cases |
-
-## Security review checklist
-
-- [ ] Identify trust zones and traffic owners.
-- [ ] Default-deny between zones; add only justified flows.
-- [ ] Separate administrative and user access paths.
-- [ ] Protect management interfaces and restrict source networks.
-- [ ] Log policy decisions and monitor unusual traffic.
-- [ ] Review DNS, NTP and certificate dependencies.
-- [ ] Document rule owner, purpose, expiry/review date and change record.
-- [ ] Test both permitted and explicitly denied flows.
-
-## Packet-analysis workflow
-
-1. Capture only traffic you own or are authorized to inspect.
-2. Use a lab environment and synthetic traffic where possible.
-3. Identify endpoints, protocol, ports and connection state.
-4. Correlate DNS lookups, TCP handshakes and TLS negotiation.
-5. Record findings without publishing payloads, tokens or personal data.
 
 ## Published labs and templates
 
@@ -60,12 +51,25 @@ The addresses above are documentation ranges reserved for examples; they are not
 - [Firewall rule review template](templates/FIREWALL-RULE-REVIEW.csv)
 - [Network security review checklist](docs/NETWORK-SECURITY-REVIEW.md)
 
-## Roadmap
+## Example firewall governance checks
 
-- [x] Publish a synthetic firewall segmentation exercise
-- [x] Add DNS troubleshooting examples
-- [x] Add Wireshark protocol walkthrough
-- [x] Add a firewall rule review template
-- [x] Add a network security review checklist
+- [ ] Identify the source, destination, service and business owner.
+- [ ] Record the purpose and justification for each rule.
+- [ ] Restrict access to the minimum required paths and ports.
+- [ ] Separate user, application, server and management trust zones.
+- [ ] Record expiry or review dates for temporary access.
+- [ ] Log policy decisions and monitor unusual traffic.
+- [ ] Test both permitted and explicitly denied flows.
+- [ ] Link changes to an approved change record.
 
-All labs require authorization and must use synthetic or explicitly approved data. No live scanning or interception is permitted without explicit authorization.
+## Packet-analysis workflow
+
+1. Capture only traffic you own or are authorised to inspect.
+2. Use a lab environment and synthetic traffic wherever possible.
+3. Identify endpoints, protocol, ports and connection state.
+4. Correlate DNS lookups, TCP handshakes and TLS negotiation.
+5. Record findings without publishing payloads, tokens or personal data.
+
+## Responsible use
+
+All topologies, packet captures, IP addresses and hostnames must be synthetic or explicitly cleared for public use. No live scanning, interception or configuration changes should be performed without explicit authorisation. The labs demonstrate learning and technical methodology; they should not be mistaken for evidence of a specific customer deployment.
